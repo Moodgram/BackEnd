@@ -5,7 +5,6 @@ from django.contrib.auth.models import AbstractUser
 class User(AbstractUser):
     email = models.EmailField(unique=True)
     nickname = models.CharField(max_length=100, unique=True)
-    profile_image = models.TextField(blank=True, null=True)
     
     groups = models.ManyToManyField(
         "auth.Group",
