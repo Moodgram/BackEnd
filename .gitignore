@@ -1,0 +1,19 @@
+# Python 관련 파일 제외
+*.pyc
+__pycache__/
+
+# 환경변수 파일 (비밀번호, API Key 보안)
+.env
+
+# 데이터베이스 파일 (로컬 SQLite의 경우)
+db.sqlite3
+
+# Django 마이그레이션 폴더 (캐시 방지)
+moodgramapp/migrations/
+
+# IDE 설정 파일 (VS Code, PyCharm)
+.vscode/
+.idea/
+
+# 가상환경 폴더 (venv)
+venv/
