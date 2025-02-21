@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "moodgramapp",
+    "apps.moodgramapp",
 ]
 
 MIDDLEWARE = [
@@ -50,7 +50,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "moodgram.urls"
+ROOT_URLCONF = "config.urls"
 AUTH_USER_MODEL = 'moodgramapp.User'  # 앱 이름을 포함한 커스텀 User 모델 경로
 
 TEMPLATES = [
@@ -69,13 +69,13 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "moodgram.wsgi.application"
+WSGI_APPLICATION = "config.wsgi.application"
 
 import os
 from dotenv import load_dotenv
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
+load_dotenv()
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -125,7 +125,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = "static/"
+# Static & Media 파일 설정 수정
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [BASE_DIR / "static"]
+
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / "media"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
