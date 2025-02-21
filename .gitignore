@@ -9,7 +9,7 @@ __pycache__/
 db.sqlite3
 
 # Django 마이그레이션 폴더 (캐시 방지)
-moodgramapp/migrations/
+moodgram/apps/moodgramapp/migrations
 
 # IDE 설정 파일 (VS Code, PyCharm)
 .vscode/
